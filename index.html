@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derma-GPT</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-heartbeat"></i></span>
+                <span>Derma-GPT</span>
+            </div>
+            <a href="#" class="nav-item active">
+                <i class="fas fa-upload"></i>
+                <span>Upload</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-history"></i>
+                <span>History</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user-md"></i>
+                <span>Consultations</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1 class="page-title">Dermatology Upload</h1>
+                <button class="btn btn-outline help-btn">
+                    <i class="fas fa-question-circle"></i> Help
+                </button>
+            </div>
+
+            <!-- Upload Cards -->
+            <div class="upload-section">
+                <div class="upload-card">
+                    <div class="card-header">
+                        <div class="card-icon text-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h3 class="card-title">Patient Notes</h3>
+                    </div>
+                    <div class="upload-area" id="text-upload-area">
+                        <i class="fas fa-file-upload"></i>
+                        <p>Drag & drop patient notes here</p>
+                        <small>Supports: .txt, .doc, .docx</small>
+                        <button class="btn btn-outline" id="browse-text-btn">Browse Files</button>
+                        <input type="file" id="text-file-input" accept=".txt,.doc,.docx" style="display: none;">
+                    </div>
+                    <div class="text-paste">
+                        <textarea id="text-paste-area" class="form-control" placeholder="Or enter patient symptoms, history, and observations..." rows="5"></textarea>
+                        <button class="btn btn-primary upload-text-btn">
+                            <i class="fas fa-upload"></i> Submit Notes
+                        </button>
+                    </div>
+                </div>
+
+                <div class="upload-card">
+                    <div class="card-header">
+                        <div class="card-icon image-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3 class="card-title">Skin Images</h3>
+                    </div>
+                    <div class="upload-area" id="image-upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop dermatology images here</p>
+                        <small>Supports: JPG, PNG (max 5MB)</small>
+                        <button class="btn btn-outline" id="browse-image-btn">Browse Files</button>
+                        <input type="file" id="image-file-input" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="preview-container" id="image-preview-container">
+                        <div class="preview-instructions">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Image ready for analysis</p>
+                        </div>
+                        <img id="image-preview" src="#" alt="Dermatology image preview">
+                        <div class="preview-actions">
+                            <button class="btn btn-outline retake-btn">
+                                <i class="fas fa-redo"></i> Retake
+                            </button>
+                            <button class="btn btn-primary upload-image-btn">
+                                <i class="fas fa-diagnoses"></i> Analyze
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upload-tips">
+                <h3><i class="fas fa-lightbulb"></i> Upload Tips</h3>
+                <ul>
+                    <li>For best results, take images in good lighting</li>
+                    <li>Include a ruler or scale for size reference when possible</li>
+                    <li>Capture multiple angles of concerning areas</li>
+                    <li>Describe symptoms, duration, and any changes over time</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

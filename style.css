@@ -1,0 +1,309 @@
+:root {
+    --primary: #5d5fef;
+    --primary-light: #e0e1ff;
+    --secondary: #4a4dff;
+    --dark: #1a1a2e;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+    --success: #4bb543;
+    --danger: #f44336;
+    --warning: #ff9800;
+    --medical: #5d5fef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f8f9ff;
+    color: var(--dark);
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    padding: 1.5rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0 1.5rem 1.5rem;
+    color: var(--medical);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--medical);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: var(--gray);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: var(--primary-light);
+    color: var(--medical);
+    border-right: 3px solid var(--medical);
+}
+
+.nav-item i {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+/* Main Content */
+.main-content {
+    padding: 2rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--medical);
+}
+
+.help-btn {
+    margin-left: auto;
+}
+
+/* Upload Cards */
+.upload-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.upload-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.upload-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(93, 95, 239, 0.1);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.text-icon {
+    background: var(--medical);
+}
+
+.image-icon {
+    background: var(--secondary);
+}
+
+.card-title {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.upload-area {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 1rem;
+}
+
+.upload-area:hover {
+    border-color: var(--medical);
+    background: var(--primary-light);
+}
+
+.upload-area i {
+    font-size: 2rem;
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+.upload-area p {
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+.upload-area small {
+    color: var(--gray);
+    font-size: 0.75rem;
+}
+
+.btn {
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: var(--medical);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--gray);
+    color: var(--gray);
+}
+
+.btn-outline:hover {
+    border-color: var(--medical);
+    color: var(--medical);
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    min-height: 120px;
+}
+
+/* Preview Container */
+.preview-container {
+    display: none;
+    flex-direction: column;
+}
+
+#image-preview {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.preview-instructions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--success);
+    font-weight: 500;
+}
+
+.preview-instructions i {
+    font-size: 1.25rem;
+}
+
+.preview-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.retake-btn {
+    flex: 1;
+}
+
+.upload-image-btn {
+    flex: 2;
+}
+
+/* Upload Tips */
+.upload-tips {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+}
+
+.upload-tips h3 {
+    color: var(--medical);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.upload-tips ul {
+    padding-left: 1.5rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.upload-tips li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+
+    .preview-actions {
+        flex-direction: column;
+    }
+
+    .upload-section {
+        grid-template-columns: 1fr;
+    }
+}
